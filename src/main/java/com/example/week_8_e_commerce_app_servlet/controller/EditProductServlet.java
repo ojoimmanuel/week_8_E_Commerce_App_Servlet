@@ -21,12 +21,10 @@ public class EditProductServlet extends HttpServlet {
             throws ServletException, IOException {
         String idParam = request.getParameter("id");
         if (idParam == null || idParam.trim().isEmpty()) {
-            // Handle missing or invalid id
             throw new IllegalArgumentException("Product ID is required.");
         }
         int productId = Integer.parseInt(idParam);
 
-//        int productId = Integer.parseInt(request.getParameter("id"));
         ProductDao productDao = new ProductDao(ConnectionUtil.getConnection());
         Product product = productDao.getProductById(productId);
         request.setAttribute("product", product);
@@ -40,10 +38,8 @@ public class EditProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        int id = Integer.parseInt(request.getParameter("id"));
         String idParam = request.getParameter("id");
         if (idParam == null || idParam.trim().isEmpty()) {
-            // Handle missing or invalid id
             throw new IllegalArgumentException("Product ID is required.");
         }
         int id = Integer.parseInt(idParam);
@@ -52,16 +48,6 @@ public class EditProductServlet extends HttpServlet {
         String description = request.getParameter("description");
         double price = Double.parseDouble(request.getParameter("price"));
         int categoryId = Integer.parseInt(request.getParameter("categoryId"));
-//        String categoryIdParam = request.getParameter("categoryId");
-//        int categoryId = 1; // Default or fallback value
-//
-//        if (categoryIdParam != null && !categoryIdParam.isEmpty()) {
-//            categoryId = Integer.parseInt(categoryIdParam);
-//        } else {
-//            // Handle the case where categoryId is missing or invalid
-//            System.out.println("Category ID is missing or invalid.");
-//            // Optionally, set a default category or throw an exception
-//        }
 
         Product product = new Product();
         product.setId(id);
@@ -70,20 +56,13 @@ public class EditProductServlet extends HttpServlet {
         product.setPrice(price);
         product.setCategoryId(categoryId);
 
-//        Category category = new Category();
-//        category.setId(categoryId);
-//        product.setCategory(category);
-
         ProductDao productDao = new ProductDao(ConnectionUtil.getConnection());
         productDao.updateProduct(product);
-//        System.out.println("Product Category: " + product.getCategory().getName());
 
         ProductListServlet productListServlet = new ProductListServlet();
         productListServlet.products(request);
 
         response.sendRedirect("admin.jsp");
-//        request.getRequestDispatcher("admin.jsp").forward(request, response);
-
     }
 }
 

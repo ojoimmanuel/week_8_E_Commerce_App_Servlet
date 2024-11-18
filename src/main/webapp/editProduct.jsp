@@ -16,11 +16,9 @@
 <h1>Edit Product</h1>
 <%
     String productId = request.getParameter("id");
-    // Fetch product details using productId and populate form fields
 %>
 <form method="post" action="editProduct">
     <input type="hidden" name="id" value="<%= productId %>" />
-<%--    <input type="hidden" name="id" value="${product.id}" />--%>
 
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" value="${product.name}" required /> <br /><br />

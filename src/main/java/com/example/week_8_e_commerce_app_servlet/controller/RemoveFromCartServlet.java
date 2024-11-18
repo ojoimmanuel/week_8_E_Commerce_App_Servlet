@@ -10,7 +10,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 
 @WebServlet("/removeFromCart")
 public class RemoveFromCartServlet extends HttpServlet {
@@ -25,13 +24,9 @@ public class RemoveFromCartServlet extends HttpServlet {
             int cartId = cartDao.getOrCreateCartId(userId);
             cartDao.removeFromCart(cartId, productId);
 
-//            request.getRequestDispatcher("customer.jsp").forward(request, response);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        // Redirect back to the cart page
         response.sendRedirect("customer.jsp");
     }
 }

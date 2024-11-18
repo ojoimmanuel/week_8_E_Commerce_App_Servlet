@@ -16,6 +16,7 @@
 <h1>Your Cart</h1>
 <table border="1">
     <tr>
+<%--        <th>Product ID</th>--%>
         <th>Product Name</th>
         <th>Price</th>
         <th>Quantity</th>
@@ -23,10 +24,14 @@
     </tr>
     <c:forEach var="item" items="${cartItems}">
         <tr>
+<%--            <td>${item.id}</td>--%>
             <td>${item.name}</td>
             <td>${item.price}</td>
             <td>${item.quantity}</td>
             <td>${item.price * item.quantity}</td>
+<%--            <td>--%>
+<%--                <a href="removeItemFromCart?id=${item.name}">Remove from Cart</a>--%>
+<%--            </td>--%>
         </tr>
     </c:forEach>
 </table>

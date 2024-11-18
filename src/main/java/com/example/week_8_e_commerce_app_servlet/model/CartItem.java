@@ -6,7 +6,6 @@ public class CartItem {
     private double price;
     private int quantity;
 
-    // Constructor
     public CartItem(int productId, String name, double price, int quantity) {
         this.productId = productId;
         this.name = name;
@@ -14,7 +13,6 @@ public class CartItem {
         this.quantity = quantity;
     }
 
-    // Getters and Setters
     public int getProductId() {
         return productId;
     }
@@ -47,7 +45,6 @@ public class CartItem {
         this.quantity = quantity;
     }
 
-    // Method to calculate total price for this item
     public double getTotalPrice() {
         return this.price * this.quantity;
     }

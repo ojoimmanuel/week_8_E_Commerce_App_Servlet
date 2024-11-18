@@ -10,7 +10,6 @@ import java.sql.SQLException;
 public class UserDao {
     private Connection connection;
 
-
     public UserDao(Connection connection) {
         this.connection = ConnectionUtil.getConnection();
     }

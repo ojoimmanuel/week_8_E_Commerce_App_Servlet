@@ -14,7 +14,6 @@ public class CartDao {
         this.connection = ConnectionUtil.getConnection();
     }
 
-    // Create a new cart for a user if it doesn't exist
     public int getOrCreateCartId(int userId) throws SQLException {
         String selectCart = "SELECT id FROM cart WHERE user_id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(selectCart);
@@ -23,7 +22,6 @@ public class CartDao {
         if (resultSet.next()) {
             return resultSet.getInt("id");
         } else {
-            // Create new cart if not found
             String insertCart = "INSERT INTO cart (user_id) VALUES (?)";
             preparedStatement = connection.prepareStatement(insertCart, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, userId);
@@ -33,10 +31,9 @@ public class CartDao {
                 return resultSet.getInt(1);
             }
         }
-        return -1; // If cart creation fails
+        return -1;
     }
 
-    // Add a product to the user's cart
     public void addToCart(int cartId, int productId, int quantity) throws SQLException {
         String query = "INSERT INTO cart_item (cart_id, product_id, quantity) VALUES (?, ?, ?) " +
                 "ON DUPLICATE KEY UPDATE quantity = quantity + ?";
@@ -44,7 +41,7 @@ public class CartDao {
         preparedStatement.setInt(1, cartId);
         preparedStatement.setInt(2, productId);
         preparedStatement.setInt(3, quantity);
-        preparedStatement.setInt(4, quantity); // Increment quantity if product is already in cart
+        preparedStatement.setInt(4, quantity);
         preparedStatement.executeUpdate();
     }
 
@@ -56,7 +53,6 @@ public class CartDao {
         preparedStatement.executeUpdate();
     }
 
-    // Retrieve items from a user's cart
     public List<CartItem> getCartItems(int cartId) throws SQLException {
         String query = "SELECT ci.id, ci.quantity, p.name, p.price " +
                 "FROM cart_item ci JOIN product p ON ci.product_id = p.id " +

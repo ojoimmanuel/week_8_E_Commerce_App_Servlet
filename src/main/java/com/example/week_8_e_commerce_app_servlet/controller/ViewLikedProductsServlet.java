@@ -42,7 +42,6 @@ public class ViewLikedProductsServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         request.setAttribute("likedProducts", likedProducts);
         request.getRequestDispatcher("viewLikes.jsp").forward(request, response);
     }

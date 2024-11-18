@@ -1,7 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.example.week_8_e_commerce_app_servlet.model.Product" %>
-<%@ page import="com.example.week_8_e_commerce_app_servlet.model.Category" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>

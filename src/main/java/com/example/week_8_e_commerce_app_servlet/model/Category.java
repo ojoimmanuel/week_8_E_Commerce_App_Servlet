@@ -5,10 +5,8 @@ public class Category {
     private String name;
     private String description;
 
-    // Constructor
     public Category() {}
 
-    // Getters and Setters
     public int getId() {
         return id;
     }

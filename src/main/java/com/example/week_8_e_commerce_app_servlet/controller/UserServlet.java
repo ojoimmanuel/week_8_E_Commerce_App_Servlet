@@ -1,7 +1,5 @@
 package com.example.week_8_e_commerce_app_servlet.controller;
 
-
-
 import com.example.week_8_e_commerce_app_servlet.dao.UserDao;
 import com.example.week_8_e_commerce_app_servlet.model.UserSignup;
 import com.example.week_8_e_commerce_app_servlet.util.ConnectionUtil;
@@ -12,7 +10,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 @WebServlet(name = "user", value = "/signup")
 public class UserServlet extends HttpServlet {
@@ -27,7 +24,6 @@ public class UserServlet extends HttpServlet {
         UserDao userDao = new UserDao(ConnectionUtil.getConnection());
         userDao.addUser(user);
 
-        // Redirect to a success page or display a message
         response.sendRedirect("signup-success.jsp");
     }
 }

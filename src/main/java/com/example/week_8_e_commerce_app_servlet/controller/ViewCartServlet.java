@@ -14,7 +14,6 @@ import java.sql.Connection;
 import java.util.List;
 
 @WebServlet("/viewCart")
-//@WebServlet("/")
 
 public class ViewCartServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

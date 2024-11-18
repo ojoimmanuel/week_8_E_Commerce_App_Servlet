@@ -1,5 +1,4 @@
-<%@ page import="com.example.week_8_e_commerce_app_servlet.model.Product" %>
-<%@ page import="java.util.List" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: EMY-W11
   Date: 11/12/2024
@@ -9,10 +8,6 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%--<jsp:useBean id="products" class="com.example.week_8_e_commerce_app_servlet.dao.ProductDao" scope="session" />--%>
-<%--<jsp:setProperty name="products" property="*" />--%>
-
-
 
 <html>
 <head>
@@ -24,22 +19,8 @@
 
 <div align="center">
   <h2>Store</h2>
-  <!-- Link to view the cart -->
   <a href="viewCart">View Cart</a> <br /> <br />
   <a href="viewLikedProducts">View Liked Products</a>
-
-<%--  <form method="get" action="productsByCategory">--%>
-<%--    <label for="category">Filter by Category:</label>--%>
-<%--    <select name="categoryId" id="category">--%>
-<%--      <option value="">All Categories</option>--%>
-<%--      <c:forEach var="category" items="${categories}">--%>
-<%--        <option value="${category.id}">${category.name}</option>--%>
-<%--      </c:forEach>--%>
-<%--    </select>--%>
-<%--    <button type="submit">Filter</button>--%>
-<%--  </form>--%>
-<%--  <br />--%>
-
 
   <!-- Display table of products -->
   <table border="1">
@@ -51,8 +32,6 @@
 <%--      <th>Category</th>--%>
       <th>Actions</th>
     </tr>
-<%--    <% List<Product> productList = products.getAllProducts(); %>--%>
-<%--    <% List<Product> productList = (List<Product>) request.getAttribute("products");%>--%>
 
     <c:forEach var="product" items="${products}">
       <tr>

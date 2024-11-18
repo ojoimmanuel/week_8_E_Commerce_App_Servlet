@@ -56,7 +56,6 @@ public class ProductDao {
 
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exceptions, e.g., by logging or rethrowing
         }
 
         return products;
@@ -150,5 +149,4 @@ public class ProductDao {
         }
         return null;
     }
-
 }

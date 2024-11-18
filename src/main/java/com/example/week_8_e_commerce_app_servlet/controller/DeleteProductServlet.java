@@ -1,11 +1,6 @@
 package com.example.week_8_e_commerce_app_servlet.controller;
 
-
-
-import com.example.week_8_e_commerce_app_servlet.dao.CategoryDao;
 import com.example.week_8_e_commerce_app_servlet.dao.ProductDao;
-import com.example.week_8_e_commerce_app_servlet.model.Category;
-import com.example.week_8_e_commerce_app_servlet.model.Product;
 import com.example.week_8_e_commerce_app_servlet.util.ConnectionUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -14,7 +9,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(name = "DeleteProductServlet", value = "/deleteProduct")
 public class DeleteProductServlet extends HttpServlet {

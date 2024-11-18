@@ -12,7 +12,6 @@
 </head>
 <body>
 <h1>Product successfully added.</h1>
-<%--<p>Your account has been created successfully! Login below.</p>--%>
 <a href="addProduct.jsp">Add another product</a>
 <a href="admin.jsp">Home</a>
 </body>

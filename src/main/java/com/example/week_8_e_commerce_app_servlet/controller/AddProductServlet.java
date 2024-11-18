@@ -1,6 +1,5 @@
 package com.example.week_8_e_commerce_app_servlet.controller;
 
-
 import com.example.week_8_e_commerce_app_servlet.dao.ProductDao;
 import com.example.week_8_e_commerce_app_servlet.model.Product;
 import com.example.week_8_e_commerce_app_servlet.util.ConnectionUtil;
@@ -11,7 +10,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(name = "addProductToServlet", value = "/addProduct")
 
@@ -37,22 +35,7 @@ public class AddProductServlet extends HttpServlet {
         productListServlet.products(request);
 
         response.sendRedirect("/addProduct-success.jsp");
-//        } else {
-//            response.sendRedirect("/addProduct-error.jsp");
-//        }
-
     }
-
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        ProductDao productDao = new ProductDao(ConnectionUtil.getConnection());
-//        List<Product> products = productDao.getAllProducts();
-//        request.setAttribute("products", products);
-//        request.getSession().setAttribute("email", "admin@gmail.com"); // example email for testing
-//
-//        // Forward to the admin dashboard
-//        request.getRequestDispatcher("admin.jsp").forward(request, response);
-//    }
 
 }
 
